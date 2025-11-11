@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rasa Tempo Dulu</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assests/img/Icon.png"
+      sizes="32x32"
+    />
+    <meta
+      name="description"
+      content="Nikmati kelezatan Jajanan Khas Trenggalek — dari Alen-alen hingga Kripik Tempe, cita rasa tradisional yang tak tergantikan."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-scroll {
+        animation: scroll 25s linear infinite;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px) scale(1.02);
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px rgba(255, 196, 80, 0.3);
+      }
+
+      /* Animasi muncul dari bawah dengan efek lembut */
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Efek awal sebelum terlihat */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease-out;
+      }
+
+      /* Ketika elemen muncul di layar */
+      .animate-on-scroll.visible {
+        animation: fadeUp 1s ease-out forwards;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gradient-to-b from-amber-50 to-white text-slate-800">
+    <!-- Navbar -->
+    <header
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-amber-100 shadow-sm"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <div class="flex items-center gap-3">
+            <img
+              src="./assests/img/Icon.png"
+              alt="Logo Rasa Tempo Dulu"
+              class="w-10 h-10 rounded-xl shadow-md"
+            />
+            <div>
+              <h1
+                class="font-extrabold text-lg text-amber-700 tracking-tight leading-tight"
+              >
+                Rasa Tempo Dulu Trenggalek
+              </h1>
+              <p class="text-xs text-amber-500 -mt-1">
+                Manis • Gurih • Tradisional
+              </p>
+            </div>
+          </div>
+
+          <!-- Tombol Menu (Mobile) -->
+          <button
+            id="menu-btn"
+            class="md:hidden text-amber-700 hover:text-amber-900 focus:outline-none"
+          >
+            <!-- Icon Hamburger -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Menu Desktop -->
+          <nav class="hidden md:flex gap-6 text-sm text-slate-600">
+            <a
+              href="index.html"
+              class="text-amber-700 hover:text-amber-900 font-medium transition"
+              >Beranda</a
+            >
+            <a
+              href="tentang.html"
+              class="text-amber-700 hover:text-amber-900 font-medium transition"
+              >Tentang</a
+            >
+            <a
+              href="kontak.html"
+              class="text-amber-700 hover:text-amber-900 font-medium transition"
+              >Kontak</a
+            >
+          </nav>
+        </div>
+      </div>
+
+      <!-- Menu Mobile (Dropdown) -->
+      <div
+        id="menu"
+        class="hidden md:hidden bg-white border-t border-amber-100 shadow-md"
+      >
+        <nav class="flex flex-col items-center py-4 space-y-3 text-slate-700">
+          <a
+            href="index.html"
+            class="text-amber-700 hover:text-amber-900 font-medium transition"
+            >Beranda</a
+          >
+          <a
+            href="tentang.html"
+            class="text-amber-700 hover:text-amber-900 font-medium transition"
+            >Tentang</a
+          >
+          <a
+            href="kontak.html"
+            class="text-amber-700 hover:text-amber-900 font-medium transition"
+            >Kontak</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section
+      class="max-w-6xl mx-auto px-6 sm:px-8 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+    >
+      <div class="fade-up">
+        <h2
+          class="text-4xl sm:text-5xl font-extrabold leading-tight text-amber-800"
+        >
+          Cita Rasa
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-amber-700 via-orange-500 to-yellow-400"
+          >
+            Khas Trenggalek
+          </span>
+        </h2>
+        <p class="mt-4 text-slate-600">
+          Dari renyahnya <strong>kripik tempe</strong> hingga manisnya
+          <strong>alen-alen</strong> dan <strong>manco</strong>, setiap gigitan
+          menghadirkan kehangatan dan nostalgia cita rasa nusantara.
+        </p>
+        <div class="mt-6 flex gap-4">
+          <a
+            href="#produk"
+            class="px-6 py-3 rounded-lg bg-amber-500 text-white font-semibold shadow-md hover:bg-amber-600 transition"
+            >Lihat Jajanan</a
+          >
+        </div>
+      </div>
+
+      <div class="relative fade-up">
+        <div
+          class="rounded-3xl overflow-hidden shadow-2xl border border-amber-100 animate-on-scroll"
+          id="food-image"
+        >
+          <img
+            src="./assests/img/Food.png"
+            alt="Jajan khas Trenggalek"
+            class="w-full h-96 object-cover"
+          />
+        </div>
+        <div
+          class="absolute bottom-4 left-6 bg-white/80 backdrop-blur px-4 py-2 rounded-lg text-sm shadow-md text-amber-800 font-semibold"
+        >
+          “Nikmat Tradisi, Dari Trenggalek untuk Nusantara”
+        </div>
+      </div>
+    </section>
+
+    <!-- Produk -->
+    <section id="produk" class="bg-amber-50 py-14">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl font-extrabold text-center text-amber-800 mb-10 tracking-tight"
+        >
+          🍪 Pilihan Jajanan Khas
+        </h2>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center"
+        >
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-md overflow-hidden card-hover"
+          >
+            <img
+              src="./assests/img/jajanan/alen-alen.jpg"
+              alt="Alen-alen"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-lg text-amber-700">Alen-Alen</h3>
+              <p class="text-sm text-slate-600 mt-2">
+                Camilan khas Trenggalek berbentuk bulat renyah, gurih dengan
+                aroma bawang yang menggoda.
+              </p>
+              <button
+                class="mt-4 px-4 py-2 bg-amber-500 text-white text-sm font-medium rounded-full hover:bg-amber-600 transition-transform duration-300 hover:scale-105"
+                onclick="window.location.href='alen-alen.html'"
+              >
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-md overflow-hidden card-hover"
+          >
+            <img
+              src="./assests/img/jajanan/kripik-tempe.jpg"
+              alt="Kripik Tempe"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-lg text-amber-700">Kripik Tempe</h3>
+              <p class="text-sm text-slate-600 mt-2">
+                Irisan tempe tipis dengan baluran tepung gurih dan renyah —
+                teman setia setiap waktu!
+              </p>
+              <button
+                class="mt-4 px-4 py-2 bg-amber-500 text-white text-sm font-medium rounded-full hover:bg-amber-600 transition-transform duration-300 hover:scale-105"
+                onclick="window.location.href='keripik-tempe.html'"
+              >
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-md overflow-hidden card-hover"
+          >
+            <img
+              src="./assests/img/jajanan/manco.jpg"
+              alt="Manco"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-lg text-amber-700">Manco</h3>
+              <p class="text-sm text-slate-600 mt-2">
+                Kue kering berbentuk balok atau segitiga yang dibalut wijen,
+                rasanya legit dan renyah.
+              </p>
+              <button
+                class="mt-4 px-4 py-2 bg-amber-500 text-white text-sm font-medium rounded-full hover:bg-amber-600 transition-transform duration-300 hover:scale-105"
+                onclick="window.location.href='manco.html'"
+              >
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="bg-white rounded-2xl shadow-md overflow-hidden card-hover"
+          >
+            <img
+              src="./assests/img/jajanan/geti-wijen.jpg"
+              alt="Geti Wijen"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-lg text-amber-700">Geti Wijen</h3>
+              <p class="text-sm text-slate-600 mt-2">
+                Terbuat dari sangrai biji wijen yang dicampur gula aren dan
+                kacang tanah.
+              </p>
+              <button
+                class="mt-4 px-4 py-2 bg-amber-500 text-white text-sm font-medium rounded-full hover:bg-amber-600 transition-transform duration-300 hover:scale-105"
+                onclick="window.location.href='geti-wijen.html'"
+              >
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="bg-white rounded-2xl shadow-md overflow-hidden card-hover"
+          >
+            <img
+              src="./assests/img/jajanan/sale-pisang.jpg"
+              alt="Sale Pisang"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-lg text-amber-700">Sale Pisang</h3>
+              <p class="text-sm text-slate-600 mt-2">
+                Pisang yang dikeringkan dan diasap hingga terkaramelisasi.
+              </p>
+              <button
+                class="mt-4 px-4 py-2 bg-amber-500 text-white text-sm font-medium rounded-full hover:bg-amber-600 transition-transform duration-300 hover:scale-105"
+                onclick="window.location.href='sale-pisang.html'"
+              >
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="bg-white rounded-2xl shadow-md overflow-hidden card-hover"
+          >
+            <img
+              src="./assests/img/jajanan/madu-mongso.jpg"
+              alt="Madu Mongso"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-lg text-amber-700">Madu Mongso</h3>
+              <p class="text-sm text-slate-600 mt-2">
+                Terbuat dari ketan hitam yang difermentasi kemudian diolah
+                bersama gula.
+              </p>
+              <button
+                class="mt-4 px-4 py-2 bg-amber-500 text-white text-sm font-medium rounded-full hover:bg-amber-600 transition-transform duration-300 hover:scale-105"
+                onclick="window.location.href='madu-mongso.html'"
+              >
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kenapa Harus Jajan Khas Trenggalek -->
+    <section
+      id="tentang"
+      class="py-20 bg-gradient-to-b from-amber-50 to-yellow-50"
+    >
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="order-2 md:order-1">
+            <h2 class="text-4xl font-extrabold text-amber-800 mb-6">
+              ✨ Kenapa Harus
+              <span class="text-amber-600">Jajan Khas Trenggalek?</span>
+            </h2>
+            <p class="text-slate-600 mb-6">
+              Karena setiap jajanan bukan sekadar camilan, tapi juga kenangan
+              yang membawa kita pulang ke suasana hangat masa lalu Trenggalek.
+            </p>
+            <ul class="space-y-3 text-amber-700 font-medium">
+              <li>🍯 Resep tradisional turun-temurun</li>
+              <li>🌾 Bahan alami dan segar</li>
+              <li>🎁 Cocok untuk oleh-oleh</li>
+              <li>🏡 Mendukung UMKM lokal</li>
+            </ul>
+          </div>
+          <div class="order-1 md:order-2">
+            <img
+              src="./assests/img/trenggalek-pasar.jpg"
+              alt="Pasar tradisional Trenggalek"
+              class="rounded-3xl shadow-2xl border border-amber-100"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips Nikmatin Jajanan -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-extrabold text-amber-800 mb-6">
+          🍵 Tips Nikmatin Jajanan
+        </h2>
+        <p class="text-slate-600 mb-10 max-w-2xl mx-auto">
+          Supaya makin terasa “Rasa Tempo Dulu”, coba nikmati jajanan khas
+          Trenggalek dengan cara berikut!
+        </p>
+
+        <!-- Grid Tips -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
+          >
+            <h3 class="font-semibold text-amber-700 mb-2">1️⃣ Sajikan Hangat</h3>
+            <p class="text-slate-600 text-sm">
+              Jenang atau gethuk lebih nikmat saat masih hangat — aromanya pun
+              makin menggugah selera!
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
+          >
+            <h3 class="font-semibold text-amber-700 mb-2">
+              2️⃣ Temani dengan Teh
+            </h3>
+            <p class="text-slate-600 text-sm">
+              Secangkir teh hangat jadi pasangan sempurna untuk jajanan manis
+              khas Trenggalek.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
+          >
+            <h3 class="font-semibold text-amber-700 mb-2">
+              3️⃣ Nikmati Bersama
+            </h3>
+            <p class="text-slate-600 text-sm">
+              Rasa jajanan paling terasa saat dinikmati bersama keluarga dan
+              sahabat.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
+          >
+            <h3 class="font-semibold text-amber-700 mb-2">
+              4️⃣ Simpan di Wadah Rapat
+            </h3>
+            <p class="text-slate-600 text-sm">
+              Agar tetap renyah dan tahan lama, simpan jajanan di tempat
+              tertutup setelah dibuka.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="border-t border-amber-200 mt-10 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-500"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-white"
+      >
+        <div class="text-sm opacity-90">
+          © <span id="year"></span> Rasa Tempo Dulu Trenggalek • Semua hak
+          dilindungi
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Deteksi ketika elemen muncul di viewport
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.2 } // aktif saat 20% elemen terlihat
+      );
+
+      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

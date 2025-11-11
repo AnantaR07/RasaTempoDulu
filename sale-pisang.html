@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rasa Tempo Dulu - Sale Pisang</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assests/img/Icon.png"
+      sizes="32x32"
+    />
+    <meta
+      name="description"
+      content="Sale Pisang khas Trenggalek camilan manis legit berbahan dasar pisang matang yang dikeringkan, menghadirkan rasa khas alami dengan aroma pisang yang menggoda."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px) scale(1.02);
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px rgba(255, 196, 80, 0.3);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gradient-to-b from-amber-50 to-white text-slate-800">
+    <!-- Navbar -->
+    <header
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-amber-100 shadow-sm"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-3">
+            <img
+              src="./assests/img/Icon.png"
+              alt="Logo Rasa Tempo Dulu"
+              class="w-10 h-10 rounded-xl shadow-md"
+            />
+            <div>
+              <h1
+                class="font-extrabold text-lg text-amber-700 tracking-tight leading-tight"
+              >
+                Rasa Tempo Dulu Trenggalek
+              </h1>
+              <p class="text-xs text-amber-500 -mt-1">
+                Manis • Gurih • Tradisional
+              </p>
+            </div>
+          </div>
+
+          <!-- Tombol Menu (Mobile) -->
+          <button
+            id="menu-btn"
+            class="md:hidden text-amber-700 hover:text-amber-900 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Menu Desktop -->
+          <nav class="hidden md:flex gap-6 text-sm text-slate-600">
+            <a
+              href="index.html"
+              class="text-amber-700 hover:text-amber-900 font-medium transition"
+              >Beranda</a
+            >
+            <a
+              href="tentang.html"
+              class="text-amber-700 hover:text-amber-900 font-medium transition"
+              >Tentang</a
+            >
+            <a
+              href="kontak.html"
+              class="text-amber-700 hover:text-amber-900 font-medium transition"
+              >Kontak</a
+            >
+          </nav>
+        </div>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div
+        id="menu"
+        class="hidden md:hidden bg-white border-t border-amber-100 shadow-md"
+      >
+        <nav class="flex flex-col items-center py-4 space-y-3 text-slate-700">
+          <a
+            href="index.html"
+            class="text-amber-700 hover:text-amber-900 font-medium transition"
+            >Beranda</a
+          >
+          <a
+            href="tentang.html"
+            class="text-amber-700 hover:text-amber-900 font-medium transition"
+            >Tentang</a
+          >
+          <a
+            href="kontak.html"
+            class="text-amber-700 hover:text-amber-900 font-medium transition"
+            >Kontak</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-amber-100 to-yellow-50 py-16 text-center shadow-inner"
+    >
+      <div class="max-w-3xl mx-auto px-6">
+        <img
+          src="./assests/img/jajanan/sale-pisang.jpg"
+          alt="Sale Pisang Trenggalek"
+          class="mx-auto rounded-2xl shadow-lg w-full max-w-md mb-6"
+        />
+        <h2 class="text-4xl font-extrabold text-amber-800 mb-4">
+          Sale Pisang Trenggalek
+        </h2>
+        <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+          Sale Pisang adalah camilan khas Trenggalek yang dibuat dari pisang
+          matang yang dikeringkan. Teksturnya renyah di luar, lembut di dalam,
+          dengan cita rasa manis alami yang khas dan aroma pisang yang menggoda.
+        </p>
+      </div>
+    </section>
+
+    <!-- Asal Usul -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h3 class="text-2xl font-bold text-amber-800 mb-4">
+          📜 Asal Usul dan Keunikan
+        </h3>
+        <p class="text-slate-700 leading-relaxed text-justify">
+          Sale Pisang merupakan camilan legendaris dari Trenggalek yang sudah
+          dikenal sejak lama. Dahulu, masyarakat mengeringkan pisang sebagai
+          cara alami untuk mengawetkannya. Dari kebiasaan ini lahirlah camilan
+          manis bernama “sale pisang”. Kini, sale pisang tidak hanya digoreng,
+          tetapi juga hadir dalam berbagai variasi, seperti sale pisang cokelat
+          atau sale krispi, yang tetap mempertahankan rasa tradisional khas
+          Trenggalek.
+        </p>
+      </div>
+    </section>
+
+    <!-- Bahan dan Proses -->
+    <section class="py-16 bg-amber-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <h3 class="text-2xl font-bold text-amber-800 mb-6">
+          🧂 Bahan & Proses Pembuatan
+        </h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold text-amber-700 mb-2">Bahan Utama:</h4>
+            <ul class="list-disc list-inside text-slate-700">
+              <li>Pisang matang (pisang raja atau kepok)</li>
+              <li>Gula pasir secukupnya</li>
+              <li>Tepung terigu (opsional untuk varian goreng)</li>
+              <li>Minyak goreng</li>
+              <li>Daun pisang untuk alas</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-amber-700 mb-2">Cara Membuat:</h4>
+            <ol class="list-decimal list-inside text-slate-700">
+              <li>Iris pisang tipis memanjang.</li>
+              <li>Jemur di bawah sinar matahari hingga kering merata.</li>
+              <li>
+                Untuk varian goreng, celupkan ke adonan tepung lalu goreng
+                hingga kecokelatan.
+              </li>
+              <li>Angkat dan tiriskan, biarkan dingin.</li>
+              <li>Kemudian siap dinikmati atau dikemas.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips Menikmati -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h3 class="text-2xl font-bold text-amber-800 mb-6">
+          🍵 Tips Nikmatin Sale Pisang
+        </h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+          >
+            <h4 class="font-semibold text-amber-700 mb-2">
+              1️⃣ Nikmati dengan Kopi atau Teh
+            </h4>
+            <p class="text-slate-600 text-sm">
+              Rasa manis alami pisang berpadu sempurna dengan minuman hangat.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+          >
+            <h4 class="font-semibold text-amber-700 mb-2">
+              2️⃣ Sajikan Sebagai Camilan Pagi
+            </h4>
+            <p class="text-slate-600 text-sm">
+              Sale pisang cocok untuk sarapan ringan atau teman santai sore.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+          >
+            <h4 class="font-semibold text-amber-700 mb-2">
+              3️⃣ Simpan di Tempat Kering
+            </h4>
+            <p class="text-slate-600 text-sm">
+              Agar tetap renyah, simpan dalam wadah tertutup di suhu ruang.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+          >
+            <h4 class="font-semibold text-amber-700 mb-2">
+              4️⃣ Jadikan Oleh-Oleh
+            </h4>
+            <p class="text-slate-600 text-sm">
+              Sale Pisang tahan lama dan mudah dikemas cocok sebagai oleh-oleh
+              khas Trenggalek.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="border-t border-amber-200 mt-10 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-500"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-white"
+      >
+        <div class="text-sm opacity-90">
+          © <span id="year"></span> Rasa Tempo Dulu Trenggalek • Semua hak
+          dilindungi
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      menuBtn.addEventListener("click", () => menu.classList.toggle("hidden"));
+    </script>
+  </body>
+</html>
