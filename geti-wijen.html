@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rasa Tempo Dulu - Geti Wijen</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assests/img/Icon.png"
+      sizes="32x32"
+    />
+    <meta
+      name="description"
+      content="Geti Wijen khas Trenggalek camilan manis gurih dari campuran gula merah, kacang tanah, dan wijen yang legit, renyah, dan penuh aroma tradisional."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px) scale(1.02);
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px rgba(255, 196, 80, 0.3);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gradient-to-b from-amber-50 to-white text-slate-800">
+    <!-- Navbar -->
+    <header
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-amber-100 shadow-sm"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-3">
+            <img
+              src="./assests/img/Icon.png"
+              alt="Logo Rasa Tempo Dulu"
+              class="w-10 h-10 rounded-xl shadow-md"
+            />
+            <div>
+              <h1
+                class="font-extrabold text-lg text-amber-700 tracking-tight leading-tight"
+              >
+                Rasa Tempo Dulu Trenggalek
+              </h1>
+              <p class="text-xs text-amber-500 -mt-1">
+                Manis • Gurih • Tradisional
+              </p>
+            </div>
+          </div>
+
+          <!-- Tombol Menu (Mobile) -->
+          <button
+            id="menu-btn"
+            class="md:hidden text-amber-700 hover:text-amber-900 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Menu Desktop -->
+          <nav class="hidden md:flex gap-6 text-sm text-slate-600">
+            <a
+              href="index.html"
+              class="text-amber-700 hover:text-amber-900 font-medium transition"
+              >Beranda</a
+            >
+            <a
+              href="tentang.html"
+              class="text-amber-700 hover:text-amber-900 font-medium transition"
+              >Tentang</a
+            >
+            <a
+              href="kontak.html"
+              class="text-amber-700 hover:text-amber-900 font-medium transition"
+              >Kontak</a
+            >
+          </nav>
+        </div>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div
+        id="menu"
+        class="hidden md:hidden bg-white border-t border-amber-100 shadow-md"
+      >
+        <nav class="flex flex-col items-center py-4 space-y-3 text-slate-700">
+          <a
+            href="index.html"
+            class="text-amber-700 hover:text-amber-900 font-medium transition"
+            >Beranda</a
+          >
+          <a
+            href="tentang.html"
+            class="text-amber-700 hover:text-amber-900 font-medium transition"
+            >Tentang</a
+          >
+          <a
+            href="kontak.html"
+            class="text-amber-700 hover:text-amber-900 font-medium transition"
+            >Kontak</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-amber-100 to-yellow-50 py-16 text-center shadow-inner"
+    >
+      <div class="max-w-3xl mx-auto px-6">
+        <img
+          src="./assests/img/jajanan/geti-wijen.jpg"
+          alt="Geti Wijen Trenggalek"
+          class="mx-auto rounded-2xl shadow-lg w-full max-w-md mb-6"
+        />
+        <h2 class="text-4xl font-extrabold text-amber-800 mb-4">
+          Geti Wijen Trenggalek
+        </h2>
+        <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+          Geti Wijen adalah camilan tradisional khas Trenggalek berbahan dasar
+          gula merah, kacang tanah, dan wijen. Teksturnya padat namun renyah
+          dengan rasa manis gurih yang autentik, menghadirkan kelezatan khas
+          tempo dulu di setiap gigitannya.
+        </p>
+      </div>
+    </section>
+
+    <!-- Asal Usul -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <h3 class="text-2xl font-bold text-amber-800 mb-4">
+          📜 Asal Usul dan Keunikan
+        </h3>
+        <p class="text-slate-700 leading-relaxed text-justify">
+          Geti Wijen sudah menjadi bagian dari warisan kuliner masyarakat
+          Trenggalek sejak lama. Camilan ini biasanya disajikan pada acara
+          hajatan atau dijadikan oleh-oleh khas daerah. Perpaduan manis gula
+          merah, gurihnya kacang tanah sangrai, dan aroma wijen yang harum
+          menjadikan Geti Wijen disukai berbagai kalangan. Kini, camilan ini
+          mudah ditemukan di berbagai toko oleh-oleh di Trenggalek.
+        </p>
+      </div>
+    </section>
+
+    <!-- Bahan dan Proses -->
+    <section class="py-16 bg-amber-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <h3 class="text-2xl font-bold text-amber-800 mb-6">
+          🧂 Bahan & Proses Pembuatan
+        </h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold text-amber-700 mb-2">Bahan Utama:</h4>
+            <ul class="list-disc list-inside text-slate-700">
+              <li>Kacang tanah sangrai</li>
+              <li>Wijen sangrai</li>
+              <li>Gula merah</li>
+              <li>Air secukupnya</li>
+              <li>Daun pisang atau loyang untuk alas</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-amber-700 mb-2">Cara Membuat:</h4>
+            <ol class="list-decimal list-inside text-slate-700">
+              <li>Lelehkan gula merah dengan sedikit air hingga kental.</li>
+              <li>
+                Masukkan kacang tanah sangrai dan wijen, aduk cepat hingga
+                tercampur rata.
+              </li>
+              <li>Tuang adonan ke atas daun pisang atau loyang dan ratakan.</li>
+              <li>
+                Biarkan mengeras, lalu potong-potong sesuai ukuran yang
+                diinginkan.
+              </li>
+              <li>Kemudian siap dikemas atau dinikmati.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips Menikmati -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h3 class="text-2xl font-bold text-amber-800 mb-6">
+          🍵 Tips Nikmatin Geti Wijen
+        </h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+          >
+            <h4 class="font-semibold text-amber-700 mb-2">
+              1️⃣ Temani dengan Kopi atau Teh
+            </h4>
+            <p class="text-slate-600 text-sm">
+              Rasa manis Geti Wijen berpadu sempurna dengan minuman hangat.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+          >
+            <h4 class="font-semibold text-amber-700 mb-2">
+              2️⃣ Simpan di Wadah Tertutup
+            </h4>
+            <p class="text-slate-600 text-sm">
+              Agar tetap renyah dan tidak melempem, simpan dalam toples rapat.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+          >
+            <h4 class="font-semibold text-amber-700 mb-2">
+              3️⃣ Nikmati Bersama Keluarga
+            </h4>
+            <p class="text-slate-600 text-sm">
+              Cocok sebagai camilan saat berkumpul bersama orang terdekat.
+            </p>
+          </div>
+
+          <div
+            class="bg-amber-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition"
+          >
+            <h4 class="font-semibold text-amber-700 mb-2">
+              4️⃣ Jadikan Oleh-Oleh
+            </h4>
+            <p class="text-slate-600 text-sm">
+              Geti Wijen tahan lama dan mudah dikemas cocok sebagai oleh-oleh
+              khas Trenggalek.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lokasi Tempat Oleh-Oleh -->
+    <section class="py-16 bg-amber-50" id="lokasi">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-2xl font-bold text-amber-800 mb-6 text-center">
+          📍 Lokasi Tempat Oleh-Oleh Terdekat
+        </h3>
+
+        <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10">
+          Ingin membeli Geti Wijen langsung dari sumbernya? Berikut beberapa
+          lokasi toko oleh-oleh terpercaya di Trenggalek.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Lokasi 1 -->
+          <div class="bg-white rounded-2xl shadow-md p-6 card-hover">
+            <!-- GAMBAR PRODUK / LOKASI -->
+            <img
+              src="./assests/img/lokasi/geti-wijen/satu.png"
+              alt="Pabrik Alen-alen UD Lestari"
+              class="w-full h-40 object-cover rounded-xl mb-4 shadow"
+            />
+
+            <h4 class="font-bold text-amber-700 text-lg mb-2">
+              Toko Bu Um Pusat Oleh - Oleh Khas Trenggalek
+            </h4>
+
+            <p class="text-slate-600 text-sm mb-4">
+              Toko Bu Um pusat oleh-oleh khas Trenggalek, RT.33/RW.14, Kranding,
+              Bendorejo, Kec. Pogalan, Kabupaten Trenggalek, Jawa Timur 66371
+            </p>
+
+            <button
+              onclick="gantiLokasi('satu')"
+              class="inline-block mt-2 px-4 py-2 bg-amber-600 text-white text-sm rounded-xl shadow hover:bg-amber-700 transition"
+            >
+              Lihat di Google Maps
+            </button>
+
+            <!-- ICON WHATSAPP -->
+            <a
+              href="https://wa.me/6282334010276"
+              target="_blank"
+              class="flex items-center gap-2 mt-4 text-green-600 hover:text-green-700 font-semibold"
+            >
+              <!-- SVG WhatsApp -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M13.601 2.326A7.854 7.854 0 0 0 8.012.003C3.584-.09.09 3.306.003 7.736a7.9 7.9 0 0 0 1.17 4.1L.004 16l4.303-1.13a7.93 7.93 0 0 0 3.691.94h.003a7.89 7.89 0 0 0 7.868-7.402 7.83 7.83 0 0 0-2.268-6.082zm-5.59 11.6h-.002a6.57 6.57 0 0 1-3.35-.92l-.24-.144-2.55.668.683-2.487-.157-.255a6.58 6.58 0 0 1-1.03-3.55c.07-3.43 2.96-6.234 6.39-6.234a6.59 6.59 0 0 1 6.6 6.598 6.63 6.63 0 0 1-6.345 6.324zm3.615-4.93c-.197-.098-1.17-.578-1.35-.644-.18-.065-.312-.098-.444.098-.131.197-.508.644-.623.776-.114.131-.23.148-.426.05-.197-.099-.83-.305-1.58-.974-.583-.52-.974-1.165-1.088-1.36-.114-.197-.012-.302.086-.4.089-.088.197-.23.295-.345.098-.114.131-.197.197-.328.065-.131.033-.246-.016-.345-.05-.098-.444-1.07-.608-1.464-.16-.39-.323-.337-.444-.345l-.38-.007c-.131 0-.345.049-.526.246-.18.197-.69.674-.69 1.64 0 .967.707 1.9.807 2.03.098.131 1.39 2.125 3.36 2.98.47.203.84.325 1.125.417.472.15.903.129 1.245.078.38-.057 1.17-.48 1.335-.943.164-.464.164-.86.115-.943-.049-.082-.18-.131-.377-.23z"
+                />
+              </svg>
+
+              Hubungi via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Peta Google -->
+        <div class="mt-12 relative">
+          <!-- Wrapper dengan background agar tidak hilang -->
+          <div class="rounded-2xl shadow-lg bg-amber-100">
+            <!-- Overlay Pesan -->
+            <div
+              id="mapPlaceholder"
+              class="absolute inset-0 flex items-center justify-center bg-amber-100 text-amber-800 font-semibold text-lg rounded-2xl shadow-lg z-10"
+            >
+              Silakan pilih lokasi terlebih dahulu
+            </div>
+
+            <!-- Iframe Maps -->
+            <iframe
+              id="mapFrame"
+              src=""
+              width="100%"
+              height="350"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              class="rounded-2xl"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="border-t border-amber-200 mt-10 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-500"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-white"
+      >
+        <div class="text-sm opacity-90">
+          © <span id="year"></span> Rasa Tempo Dulu Trenggalek • Semua hak
+          dilindungi
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      menuBtn.addEventListener("click", () => menu.classList.toggle("hidden"));
+
+      function gantiLokasi(nomor) {
+        const map = document.getElementById("mapFrame");
+        const overlay = document.getElementById("mapPlaceholder"); // ← INI YANG HILANG
+
+        const lokasi = {
+          satu: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31599.836678913223!2d111.75997609999999!3d-8.1035605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e791b8190048113%3A0x36fb556f4f33d48b!2sToko%20bu%20um%20pusat%20oleh%20-%20oleh%20khas%20trenggalek!5e0!3m2!1sid!2sid!4v1763358261221!5m2!1sid!2sid",
+        };
+
+        // Ganti src sesuai pilihan
+        map.src = lokasi[nomor];
+
+        // Hilangkan overlay pesan
+        overlay.style.display = "none";
+
+        // ⬇⬇ Auto Scroll ke MAP ⬇⬇
+        document.getElementById("lokasi").scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+        });
+      }
+    </script>
+  </body>
+</html>
