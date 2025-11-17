@@ -16,6 +16,19 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      @keyframes slideDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-slide-down {
+        animation: slideDown 0.3s ease forwards;
+      }
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -61,7 +74,7 @@
           <div class="flex items-center gap-3">
             <img
               src="./assests/img/Icon.png"
-              alt="Logo Rasa Tempo Dulu"
+              alt="Logo Jajan Trenggalek"
               class="w-10 h-10 rounded-xl shadow-md"
             />
             <div>
@@ -76,71 +89,52 @@
             </div>
           </div>
 
-          <!-- Tombol Menu (Mobile) -->
-          <button
-            id="menu-btn"
-            class="md:hidden text-amber-700 hover:text-amber-900 focus:outline-none"
-          >
-            <!-- Icon Hamburger -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-7 w-7"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-
           <!-- Menu Desktop -->
-          <nav class="hidden md:flex gap-6 text-sm text-slate-600">
-            <a
-              href="index.html"
-              class="text-amber-700 hover:text-amber-900 font-medium transition"
-              >Beranda</a
-            >
-            <a
-              href="tentang.html"
-              class="text-amber-700 hover:text-amber-900 font-medium transition"
-              >Tentang</a
-            >
-            <a
-              href="kontak.html"
-              class="text-amber-700 hover:text-amber-900 font-medium transition"
+          <nav class="hidden md:flex gap-6 text-sm text-amber-700 font-medium">
+            <a href="index.html" class="hover:text-amber-600">Beranda</a>
+            <a href="tentang.html" class="hover:text-amber-600">Tentang</a>
+            <a href="kontak.html" class="text-amber-800 font-semibold"
               >Kontak</a
             >
           </nav>
+
+          <!-- Tombol Menu Mobile -->
+          <div class="md:hidden">
+            <button
+              id="btnMenu"
+              class="p-2 rounded-md text-amber-700 hover:bg-amber-50 transition"
+            >
+              <svg
+                id="iconMenu"
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Menu Mobile (Dropdown) -->
+      <!-- Dropdown Menu Mobile -->
       <div
-        id="menu"
-        class="hidden md:hidden bg-white border-t border-amber-100 shadow-md"
+        id="mobileMenu"
+        class="md:hidden hidden border-t border-amber-100 bg-white shadow-md"
       >
-        <nav class="flex flex-col items-center py-4 space-y-3 text-slate-700">
-          <a
-            href="index.html"
-            class="text-amber-700 hover:text-amber-900 font-medium transition"
-            >Beranda</a
-          >
-          <a
-            href="tentang.html"
-            class="text-amber-700 hover:text-amber-900 font-medium transition"
-            >Tentang</a
-          >
-          <a
-            href="kontak.html"
-            class="text-amber-700 hover:text-amber-900 font-medium transition"
+        <div class="px-4 py-3 space-y-3 text-amber-700 font-medium">
+          <a href="index.html" class="block hover:text-amber-600">Beranda</a>
+          <a href="tentang.html" class="block hover:text-amber-600">Tentang</a>
+          <a href="kontak.html" class="block hover:text-amber-800 font-semibold"
             >Kontak</a
           >
-        </nav>
+        </div>
       </div>
     </header>
     <!-- Hero Section -->
@@ -464,9 +458,11 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
-      const menuBtn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
-      menuBtn.addEventListener("click", () => menu.classList.toggle("hidden"));
+      document.getElementById("btnMenu").addEventListener("click", function () {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("animate-slide-down");
+      });
 
       function gantiLokasi(nomor) {
         const map = document.getElementById("mapFrame");
